@@ -84,4 +84,8 @@ reports/
 *.model
 *.pkl
 *.h5
-*.pb 
+*.pb
+
+# External repositories (clone separately)
+Agent-S/
+android_world/ 
