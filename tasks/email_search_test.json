@@ -1,0 +1,129 @@
+{
+  "name": "Email Search and Management Test",
+  "description": "Test email application search functionality, message interaction, and organization features",
+  "app_under_test": "com.google.android.gm",
+  "test_goals": [
+    {
+      "title": "Launch Email Application",
+      "description": "Successfully launch Gmail application and verify main inbox view",
+      "app_name": "com.google.android.gm",
+      "test_type": "functional",
+      "priority": "CRITICAL",
+      "estimated_duration": 15,
+      "tags": ["launch", "gmail", "inbox"],
+      "prerequisites": ["device_unlocked", "gmail_configured"]
+    },
+    {
+      "title": "Access Search Functionality",
+      "description": "Navigate to search function and verify search interface is accessible",
+      "app_name": "com.google.android.gm",
+      "test_type": "navigation",
+      "priority": "HIGH",
+      "estimated_duration": 10,
+      "tags": ["search", "navigation", "ui"]
+    },
+    {
+      "title": "Perform Email Search",
+      "description": "Execute search query for specific email content and verify results",
+      "app_name": "com.google.android.gm",
+      "test_type": "functional",
+      "priority": "HIGH",
+      "estimated_duration": 20,
+      "tags": ["search", "query", "results"]
+    },
+    {
+      "title": "Verify Search Results",
+      "description": "Validate search results are relevant and properly displayed",
+      "app_name": "com.google.android.gm",
+      "test_type": "verification",
+      "priority": "HIGH",
+      "estimated_duration": 15,
+      "tags": ["verification", "search_results", "relevance"]
+    },
+    {
+      "title": "Open Email from Results",
+      "description": "Select and open an email from search results",
+      "app_name": "com.google.android.gm",
+      "test_type": "functional",
+      "priority": "HIGH",
+      "estimated_duration": 12,
+      "tags": ["email_open", "interaction", "content"]
+    },
+    {
+      "title": "Navigate Email Content",
+      "description": "Scroll through email content and interact with elements",
+      "app_name": "com.google.android.gm",
+      "test_type": "ui",
+      "priority": "MEDIUM",
+      "estimated_duration": 18,
+      "tags": ["scroll", "content", "navigation"]
+    },
+    {
+      "title": "Return to Search Results",
+      "description": "Navigate back to search results using back button or navigation",
+      "app_name": "com.google.android.gm",
+      "test_type": "navigation",
+      "priority": "MEDIUM",
+      "estimated_duration": 8,
+      "tags": ["back_navigation", "search_results"]
+    },
+    {
+      "title": "Clear Search and Return to Inbox",
+      "description": "Clear search query and return to main inbox view",
+      "app_name": "com.google.android.gm",
+      "test_type": "functional",
+      "priority": "MEDIUM",
+      "estimated_duration": 10,
+      "tags": ["clear_search", "inbox", "reset"]
+    },
+    {
+      "title": "Test Advanced Search Features",
+      "description": "Test advanced search filters like sender, date range, or labels",
+      "app_name": "com.google.android.gm",
+      "test_type": "functional",
+      "priority": "LOW",
+      "estimated_duration": 30,
+      "tags": ["advanced_search", "filters", "labels"]
+    }
+  ],
+  "environment": {
+    "android_version": "13",
+    "device_type": "emulator",
+    "screen_resolution": "1080x1920",
+    "locale": "en_US",
+    "network_connectivity": true
+  },
+  "device_requirements": {
+    "min_api_level": 33,
+    "network_capability": true,
+    "storage_mb": 200,
+    "google_services": true
+  },
+  "test_data": {
+    "search_queries": [
+      "important meeting",
+      "project update",
+      "vacation request"
+    ],
+    "expected_search_elements": [
+      "com.google.android.gm:id/search_src_text",
+      "android:id/search_src_text"
+    ],
+    "gmail_selectors": {
+      "search_button": "com.google.android.gm:id/search",
+      "search_field": "com.google.android.gm:id/search_src_text",
+      "email_item": "com.google.android.gm:id/conversation_list_item",
+      "back_button": "android:id/up"
+    },
+    "verification_criteria": {
+      "max_search_time": 10000,
+      "min_results": 1,
+      "email_load_timeout": 8000
+    },
+    "error_scenarios": [
+      "no_network_connection",
+      "empty_search_results",
+      "invalid_search_query"
+    ]
+  }
+} 

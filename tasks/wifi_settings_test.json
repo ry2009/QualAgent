@@ -1,0 +1,94 @@
+{
+  "name": "WiFi Settings Comprehensive Test",
+  "description": "Comprehensive test of WiFi settings functionality including navigation, state changes, and error scenarios",
+  "app_under_test": "com.android.settings",
+  "test_goals": [
+    {
+      "title": "Navigate to WiFi Settings",
+      "description": "Navigate from main settings to WiFi settings page",
+      "app_name": "com.android.settings",
+      "test_type": "navigation",
+      "priority": "HIGH",
+      "estimated_duration": 30,
+      "tags": ["navigation", "settings", "wifi"],
+      "prerequisites": ["device_unlocked", "settings_accessible"]
+    },
+    {
+      "title": "Verify WiFi Current State",
+      "description": "Check and record the current WiFi enabled/disabled state",
+      "app_name": "com.android.settings",
+      "test_type": "functional",
+      "priority": "HIGH",
+      "estimated_duration": 10,
+      "tags": ["verification", "wifi", "state"]
+    },
+    {
+      "title": "Toggle WiFi Off",
+      "description": "Turn WiFi off if currently enabled and verify state change",
+      "app_name": "com.android.settings",
+      "test_type": "functional",
+      "priority": "CRITICAL",
+      "estimated_duration": 15,
+      "tags": ["wifi", "toggle", "disable"]
+    },
+    {
+      "title": "Verify WiFi Disabled State",
+      "description": "Confirm WiFi is properly disabled with visual and functional verification",
+      "app_name": "com.android.settings",
+      "test_type": "verification",
+      "priority": "HIGH",
+      "estimated_duration": 10,
+      "tags": ["verification", "wifi", "disabled"]
+    },
+    {
+      "title": "Toggle WiFi On",
+      "description": "Turn WiFi back on and verify it enables successfully",
+      "app_name": "com.android.settings",
+      "test_type": "functional",
+      "priority": "CRITICAL",
+      "estimated_duration": 20,
+      "tags": ["wifi", "toggle", "enable"]
+    },
+    {
+      "title": "Verify WiFi Enabled State",
+      "description": "Confirm WiFi is properly enabled and scanning for networks",
+      "app_name": "com.android.settings",
+      "test_type": "verification",
+      "priority": "HIGH",
+      "estimated_duration": 15,
+      "tags": ["verification", "wifi", "enabled", "scanning"]
+    },
+    {
+      "title": "Test WiFi List Interaction",
+      "description": "Interact with available WiFi network list (scroll, tap)",
+      "app_name": "com.android.settings",
+      "test_type": "ui",
+      "priority": "MEDIUM",
+      "estimated_duration": 25,
+      "tags": ["ui", "wifi", "network_list", "interaction"]
+    }
+  ],
+  "environment": {
+    "android_version": "13",
+    "device_type": "emulator",
+    "screen_resolution": "1080x1920",
+    "locale": "en_US"
+  },
+  "device_requirements": {
+    "min_api_level": 33,
+    "wifi_capability": true,
+    "storage_mb": 100
+  },
+  "test_data": {
+    "expected_wifi_settings_title": "Wi‑Fi",
+    "wifi_toggle_selectors": [
+      "com.android.settings:id/switch_widget",
+      "android:id/switch_widget"
+    ],
+    "verification_timeouts": {
+      "state_change": 5000,
+      "navigation": 3000,
+      "network_scan": 10000
+    }
+  }
+} 
