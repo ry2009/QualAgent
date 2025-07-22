@@ -2,6 +2,8 @@
 
 A production-ready multi-agent AI system for comprehensive Android app testing, combining Agent-S automation, QualGent verification, and AndroidWorld real device testing.
 
+(for full implementaiton please clone https://github.com/simular-ai/Agent-S# & https://github.com/google-research/android_world#)
+
 ## Overview
 
 QualAgent integrates three powerful frameworks to create the most comprehensive Android testing solution:
