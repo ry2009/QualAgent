@@ -13,8 +13,8 @@ QualAgent integrates three powerful frameworks to create the most comprehensive 
 - **AndroidWorld**: Real Android testing environment with 116 tasks across 20 apps
 
 
-## Add-ons vs instructions(tried to exceed):
- # Beyond Basic Agent-S Integration
+# Add-ons vs instructions(tried to exceed):
+ ## Beyond Basic Agent-S Integration
 
 **Requirement**: Fork Agent-S and use modular messaging structure
 **Our Implementation**: Built deep architectural integration with Agent-S Manager/Worker components plus our own QualGent Verifier/Supervisor, creating a 5-agent ecosystem instead of the required 4. We preserved Agent-S's strengths while adding strategic oversight and advanced verification that the instructions didn't require.
