@@ -23,7 +23,7 @@ class GeminiIntegrationTest:
     """Test Gemini API integration"""
     
     def __init__(self):
-        self.api_key = "AIzaSyBcbwXYVcNZt6aRLeBExycL9_g1GG_XQEE"
+        self.api_key = os.getenv("GCP_API_KEY")
         self.test_results = []
         
     async def run_all_tests(self):
@@ -302,8 +302,9 @@ async def main():
     """Main test runner"""
     print("Starting Gemini integration tests...")
     
-    # Set environment variable for Google API
-    os.environ["GCP_API_KEY"] = "AIzaSyBcbwXYVcNZt6aRLeBExycL9_g1GG_XQEE"
+    # Ensure environment variable is set for Google API
+    if not os.getenv("GCP_API_KEY"):
+        print("Warning: GCP_API_KEY environment variable not set")
     
     tester = GeminiIntegrationTest()
     success = await tester.run_all_tests()
